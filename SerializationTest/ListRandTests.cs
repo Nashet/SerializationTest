@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace SerializationTests
+namespace UnitTests
 {
 
     [TestClass]
@@ -178,12 +178,11 @@ namespace SerializationTests
 
         private void RunTest(ListRand list)
         {
-
+            //can find file in /debug folder
             using (var writingStream = new FileStream("test.txt", FileMode.Create))
             {
                 list.Serialize(writingStream);
             }
-
 
             var list2 = new ListRand();
 
@@ -191,7 +190,6 @@ namespace SerializationTests
             {
                 list2.Deserialize(readingStream);
             }            
-
 
             Assert.IsTrue(ListRandExtensions.IsSame(list, list2));
 

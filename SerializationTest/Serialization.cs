@@ -1,9 +1,7 @@
-﻿using BinarySerializer;
+﻿
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Text;
 
 
 public class ListNode
@@ -76,6 +74,7 @@ public class ListRand
 
     public void Deserialize(FileStream s)
     {
+        // keeps already restored nodes with IDs
         var restoredElements = new Dictionary<int, ListNode>();
         using (BinaryReader reader = new BinaryReader(s))
         {
@@ -102,7 +101,5 @@ public class ListRand
             }
         }
     }
-
-
 }
 
