@@ -1,0 +1,14 @@
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\SerializationTest.dll
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\SerializationTest.pdb
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\obj\Debug\SerializationTest.csprojAssemblyReference.cache
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\obj\Debug\SerializationTest.csproj.CoreCompileInputs.cache
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\obj\Debug\SerializationTest.csproj.CopyComplete
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\obj\Debug\SerializationTest.dll
+e:\MyDocuments\UniProjects\SerializationTest\SerializationTest\obj\Debug\SerializationTest.pdb
