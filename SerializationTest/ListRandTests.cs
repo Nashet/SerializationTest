@@ -4,10 +4,12 @@ using System.IO;
 
 namespace UnitTests
 {
-
     [TestClass]
     public class ListRandTests
     {
+        /// <summary>
+        /// Just some list for testing
+        /// </summary>        
         private static ListRand MakeSomeList()
         {
             var a = new ListNode();

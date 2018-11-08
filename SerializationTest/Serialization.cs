@@ -13,7 +13,6 @@ public class ListNode
 }
 //fixit exceptions                                
 //fixit arguments   
-//fixit complexity
 public class ListRand
 {    
     //private const sbyte isNullFlag = -1, isNotNullFlag = 0;
@@ -78,7 +77,7 @@ public class ListRand
         var restoredElements = new Dictionary<int, ListNode>();
         using (BinaryReader reader = new BinaryReader(s))
         {
-            ListNode firstNode = reader.DeserializeNode(restoredElements, 0, -1);
+            ListNode firstNode = reader.DeserializeNode(restoredElements, Count, -1);//assumes Count is zero
 
             if (firstNode != null)
             {

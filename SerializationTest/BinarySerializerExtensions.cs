@@ -4,6 +4,9 @@ using System.IO;
 
 public static class BinarySerializerExtensions
 {
+    /// <summary>
+    /// Helps find object associated with given ID
+    /// </summary>    
     internal static T GetObjectByID<T>(this Dictionary<int, T> dictionary, int id) where T : new()
     {
         if (dictionary.TryGetValue(id, out T value))// complexity - O(1)
@@ -12,7 +15,6 @@ public static class BinarySerializerExtensions
         }
         else
         {
-
             var f = new T();
             dictionary.Add(id, f);// Max complexity - O(n)
             return f;
