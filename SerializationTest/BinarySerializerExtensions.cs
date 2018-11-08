@@ -5,7 +5,7 @@ using System.IO;
 public static class BinarySerializerExtensions
 {
     /// <summary>
-    /// Helps find object associated with given ID
+    /// Helps find object associated with given ID. If object isn't found - creates new one.
     /// </summary>    
     internal static T GetObjectByID<T>(this Dictionary<int, T> dictionary, int id) where T : new()
     {
@@ -15,15 +15,16 @@ public static class BinarySerializerExtensions
         }
         else
         {
-            var f = new T();
-            dictionary.Add(id, f);// Max complexity - O(n)
-            return f;
+            var newObject = new T();
+            dictionary.Add(id, newObject);// Max complexity - O(n)
+            return newObject;
         }
     }
 
     /// <summary>
     /// For unknown yet nodes creates record in dictionary associating node with ID.
-    /// Next time you meet that ID - you take node from dictionary, keeping links correct
+    /// Next time you meet that ID - you take node from dictionary, keeping links correct.
+    /// Doesn't restore Next and Prev fields.
     /// </summary>        
     internal static ListNode DeserializeNode(this BinaryReader reader, Dictionary<int, ListNode> restoredElements, int ID, sbyte isNullFlag)
     {
@@ -36,7 +37,6 @@ public static class BinarySerializerExtensions
         int randField = BitConverter.ToInt32(buffer, 0);
 
         bool isNullString = reader.ReadSByte() == isNullFlag;
-
 
         var text = reader.ReadString(); // have to read to skip some bytes
 

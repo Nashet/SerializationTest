@@ -11,10 +11,9 @@ public class ListNode
     public ListNode Rand; //произвольный элемент внутри  списка
     public string Data;
 }
-//fixit exceptions                                
-//fixit arguments   
+
 public class ListRand
-{    
+{
     //private const sbyte isNullFlag = -1, isNotNullFlag = 0;
 
     public ListNode Head;
@@ -28,7 +27,6 @@ public class ListRand
         // if Rand is null than -1 is written
         // next 1 byte - "following string is null" flag, -1 - is null, other value - not null 
         // next is a length-prefixed (4 bytes) string containing Data field
-
         // default encoding is UTF-8
 
 
@@ -73,11 +71,14 @@ public class ListRand
 
     public void Deserialize(FileStream s)
     {
+        if (Count != 0)
+            throw new InvalidOperationException("ListRand is not empty, data corruption is possible.");
+
         // keeps already restored nodes with IDs
         var restoredElements = new Dictionary<int, ListNode>();
         using (BinaryReader reader = new BinaryReader(s))
-        {
-            ListNode firstNode = reader.DeserializeNode(restoredElements, Count, -1);//assumes Count is zero
+        {            
+            ListNode firstNode = reader.DeserializeNode(restoredElements, Count, -1);
 
             if (firstNode != null)
             {
@@ -89,12 +90,13 @@ public class ListRand
                 while (s.Position != s.Length)
                 {
                     var currentNode = reader.DeserializeNode(restoredElements, Count, -1);
+
                     currentNode.Prev = previousNode;
                     previousNode.Next = currentNode;
 
-
-                    previousNode = currentNode;
                     Count++;
+
+                    previousNode = currentNode;                    
                     Tail = currentNode;
                 }
             }

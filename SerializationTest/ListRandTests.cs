@@ -99,9 +99,9 @@ namespace UnitTests
         {
             var list = MakeSomeList();
 
-            list.Head.Data = "ddddd" + '\0' + "ssssss\r\t"+"gggg";
+            list.Head.Data = "ddddd" + '\0' + "ssssss\r\t" + "gggg";
             list.Head.Next.Data = "nnnnnnn" + '\0' + "mmmmmmmm\n";
-            
+
             RunTest(list);
         }
 
@@ -129,8 +129,7 @@ namespace UnitTests
         {
 
             var list = MakeSomeList();
-            var newNode = new ListNode();
-            //list.Head.Data = null;
+            var newNode = new ListNode();            
             newNode.Data = "";
 
             var previous = list.Head.Next;
@@ -164,7 +163,6 @@ namespace UnitTests
             RunTest(list);
         }
 
-
         [TestMethod]
         public void TestFileReadability()
         {
@@ -175,12 +173,11 @@ namespace UnitTests
                 list2.Deserialize(readingStream);
             }
             Assert.IsTrue(true); // just too see if there are some exceptions or something
-
         }
 
         private void RunTest(ListRand list)
         {
-            //can find file in /debug folder
+            //you can find file in /debug folder
             using (var writingStream = new FileStream("test.txt", FileMode.Create))
             {
                 list.Serialize(writingStream);
@@ -191,10 +188,9 @@ namespace UnitTests
             using (var readingStream = new FileStream("test.txt", FileMode.Open))
             {
                 list2.Deserialize(readingStream);
-            }            
+            }
 
             Assert.IsTrue(ListRandExtensions.IsSame(list, list2));
-
         }
     }
 }

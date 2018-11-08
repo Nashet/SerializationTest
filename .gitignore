@@ -60,6 +60,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
-/SerializationTest/bin/
-/SerializationTest/obj/
-SerializationTest/bin/Debug/SerializationTest.dll
+SerializationTest/bin/
+SerializationTest/obj/
