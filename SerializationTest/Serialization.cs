@@ -42,6 +42,9 @@ public class ListRand
             counter++;
         }
 
+        if (Count != counter)
+            throw new InvalidOperationException("ListRand structure is broken.");
+
         //write data to stream, complexity - O(n) 
         using (BinaryWriter writer = new BinaryWriter(s))
         {
@@ -77,7 +80,7 @@ public class ListRand
         // keeps already restored nodes with IDs
         var restoredElements = new Dictionary<int, ListNode>();
         using (BinaryReader reader = new BinaryReader(s))
-        {            
+        {
             ListNode firstNode = reader.DeserializeNode(restoredElements, Count, -1);
 
             if (firstNode != null)
@@ -96,7 +99,7 @@ public class ListRand
 
                     Count++;
 
-                    previousNode = currentNode;                    
+                    previousNode = currentNode;
                     Tail = currentNode;
                 }
             }
