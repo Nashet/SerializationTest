@@ -45,6 +45,7 @@ namespace UnitTests
         }
 
         // some change
+        // some another change
         internal static bool IsSame(ListNode a, ListNode b)
         {
             if (a.Data != b.Data)
